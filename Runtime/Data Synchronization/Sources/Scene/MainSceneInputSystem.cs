@@ -30,19 +30,66 @@ namespace GameFramework.Sample.DataSynchronization
     /// </summary>
     static class MainSceneInputSystem
     {
-        [GameEngine.OnInputDispatchCall((int) UnityEngine.KeyCode.E, GameEngine.InputOperationType.Released)]
-        static void OnEnterWorldMessageSend(int keycode, int operationType)
-        {
-        }
-
         [GameEngine.OnInputDispatchCall((int) UnityEngine.KeyCode.A, GameEngine.InputOperationType.Released)]
-        static void OnLevelSpawnMessageSend(int keycode, int operationType)
+        static void OnDisplayAllObjects(int keycode, int operationType)
         {
+            MainDataComponent mainDataComponent = GameEngine.GameApi.GetCurrentSceneComponent<MainDataComponent>();
+            for (int n = 0; n < mainDataComponent.players.Count; ++n)
+            {
+                Debugger.Info(mainDataComponent.players[n].ToString());
+            }
+            for (int n = 0; n < mainDataComponent.monsters.Count; ++n)
+            {
+                Debugger.Info(mainDataComponent.monsters[n].ToString());
+            }
+
+            (GameEngine.GameApi.GetCurrentScene() as MainScene).PrintUsage();
         }
 
-        [GameEngine.OnInputDispatchCall((int) UnityEngine.KeyCode.Q, GameEngine.InputOperationType.Released)]
-        static void OnLeaveWorldMessageSend(int keycode, int operationType)
+        [GameEngine.OnInputDispatchCall((int) UnityEngine.KeyCode.Z, GameEngine.InputOperationType.Released)]
+        static void TestReplicateTags_1(int keycode, int operationType)
         {
+            GameEngine.GameApi.Push("player.inventory.item", GameEngine.ReplicateAnnounceType.Changed);
+        }
+
+        [GameEngine.OnInputDispatchCall((int) UnityEngine.KeyCode.Alpha1, GameEngine.InputOperationType.Released)]
+        static void OnCreatePlayerObject(int keycode, int operationType)
+        {
+            Player player = DataBuilder.CreatePlayer();
+
+            MainDataComponent mainDataComponent = GameEngine.GameApi.GetCurrentSceneComponent<MainDataComponent>();
+            mainDataComponent.players.Add(player);
+        }
+
+        [GameEngine.OnInputDispatchCall((int) UnityEngine.KeyCode.Alpha2, GameEngine.InputOperationType.Released)]
+        static void OnDestroyPlayerObject(int keycode, int operationType)
+        {
+            MainDataComponent mainDataComponent = GameEngine.GameApi.GetCurrentSceneComponent<MainDataComponent>();
+            if (mainDataComponent.players.Count > 0)
+            {
+                GameEngine.GameApi.DestroyActor(mainDataComponent.players[0]);
+                mainDataComponent.players.RemoveAt(0);
+            }
+        }
+
+        [GameEngine.OnInputDispatchCall((int) UnityEngine.KeyCode.Alpha3, GameEngine.InputOperationType.Released)]
+        static void OnCreateMonsterObject(int keycode, int operationType)
+        {
+            Monster monster = DataBuilder.CreateMonster();
+
+            MainDataComponent mainDataComponent = GameEngine.GameApi.GetCurrentSceneComponent<MainDataComponent>();
+            mainDataComponent.monsters.Add(monster);
+        }
+
+        [GameEngine.OnInputDispatchCall((int) UnityEngine.KeyCode.Alpha4, GameEngine.InputOperationType.Released)]
+        static void OnDestroyMonsterObject(int keycode, int operationType)
+        {
+            MainDataComponent mainDataComponent = GameEngine.GameApi.GetCurrentSceneComponent<MainDataComponent>();
+            if (mainDataComponent.monsters.Count > 0)
+            {
+                GameEngine.GameApi.DestroyActor(mainDataComponent.monsters[0]);
+                mainDataComponent.monsters.RemoveAt(0);
+            }
         }
     }
 }

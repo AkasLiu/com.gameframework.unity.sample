@@ -21,13 +21,17 @@
 /// THE SOFTWARE.
 /// -------------------------------------------------------------------------------
 
+using System.Collections.Generic;
+
 namespace GameFramework.Sample.DataSynchronization
 {
     /// <summary>
     /// 主场景数据组件类
     /// </summary>
     [GameEngine.CComponentClass("MainDataComponent")]
-    internal class MainDataComponent : GameEngine.CComponent
+    class MainDataComponent : GameEngine.CComponent
     {
+        public IList<Player> players;
+        public IList<Monster> monsters;
     }
 }

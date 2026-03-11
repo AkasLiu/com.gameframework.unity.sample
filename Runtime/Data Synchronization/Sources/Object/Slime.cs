@@ -23,13 +23,20 @@
 
 using System.Collections;
 using System.Collections.Generic;
+using System.Text;
 
 namespace GameFramework.Sample.DataSynchronization
 {
     /// <summary>
     /// 史莱姆怪物对象类
     /// </summary>
-    internal class Slime : Monster
+    class Slime : Monster
     {
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.AppendFormat("史莱姆：{0}", base.ToString());
+            return base.ToString();
+        }
     }
 }

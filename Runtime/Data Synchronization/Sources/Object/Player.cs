@@ -21,6 +21,8 @@
 /// THE SOFTWARE.
 /// -------------------------------------------------------------------------------
 
+using System.Text;
+
 namespace GameFramework.Sample.DataSynchronization
 {
     /// <summary>
@@ -28,7 +30,16 @@ namespace GameFramework.Sample.DataSynchronization
     /// </summary>
     [GameEngine.CActorClass("Player")]
     [GameEngine.CComponentAutomaticActivationOfEntity(typeof(InventoryComponent))]
-    internal class Player : Soldier
+    [GameEngine.OnReplicateClass()]
+    class Player : Soldier
     {
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.AppendFormat("玩家：{0},", base.ToString());
+            sb.AppendFormat("{0}", GetComponent<InventoryComponent>().ToString());
+
+            return sb.ToString();
+        }
     }
 }

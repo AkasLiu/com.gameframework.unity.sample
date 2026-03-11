@@ -22,6 +22,7 @@
 /// -------------------------------------------------------------------------------
 
 using System.Collections.Generic;
+using System.Text;
 
 namespace GameFramework.Sample.DataSynchronization
 {
@@ -42,5 +43,20 @@ namespace GameFramework.Sample.DataSynchronization
         }
 
         public IList<ItemInfo> items;
+
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.Append(@"背包={");
+            for (int n = 0; null != items && n < items.Count; ++n)
+            {
+                ItemInfo item = items[n];
+
+                if (n > 0) sb.Append(",");
+                sb.AppendFormat("[{0},{1},{2},{3},{4}]", item.id, item.pos, item.quantity, item.using_time, item.last_used_time);
+            }
+            sb.Append(@"}");
+            return sb.ToString();
+        }
     }
 }

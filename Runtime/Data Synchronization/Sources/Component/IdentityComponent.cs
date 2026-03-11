@@ -32,15 +32,16 @@ namespace GameFramework.Sample.DataSynchronization
     [GameEngine.CComponentClass("IdentityComponent")]
     internal class IdentityComponent : GameEngine.CComponent
     {
+        [GameEngine.OnReplicateField("object_type")]
         public int objectType;
 
+        [GameEngine.OnReplicateField("object_name")]
         public string objectName;
 
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.AppendFormat("类型={0},名称={1},",
-                this.objectType, this.objectName);
+            sb.AppendFormat("类型={0},名称={1}", this.objectType, this.objectName);
 
             return sb.ToString();
         }

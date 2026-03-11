@@ -21,8 +21,6 @@
 /// THE SOFTWARE.
 /// -------------------------------------------------------------------------------
 
-using System.Text;
-
 namespace GameFramework.Sample.DataSynchronization
 {
     /// <summary>
@@ -43,26 +41,6 @@ namespace GameFramework.Sample.DataSynchronization
         [GameEngine.OnAspectAfterCall(GameEngine.AspectBehaviourType.Destroy)]
         static void Destroy(this Soldier self)
         {
-        }
-
-        public static string ToSoldierString(this Soldier self)
-        {
-            StringBuilder sb = new StringBuilder();
-            sb.AppendFormat("Id={0},", self.uid);
-
-            IdentityComponent identityComponent = self.GetComponent<IdentityComponent>();
-            sb.Append(identityComponent.ToString());
-
-            AttributeComponent attributeComponent = self.GetComponent<AttributeComponent>();
-            sb.Append(attributeComponent.ToString());
-
-            TransformComponent transformComponent = self.GetComponent<TransformComponent>();
-            sb.Append(transformComponent.ToString());
-
-            SkillComponent skillComponent = self.GetComponent<SkillComponent>();
-            sb.Append(skillComponent.ToString());
-
-            return sb.ToString();
         }
     }
 }

@@ -21,9 +21,6 @@
 /// THE SOFTWARE.
 /// -------------------------------------------------------------------------------
 
-using System.Collections.Generic;
-using System.Text;
-
 namespace GameFramework.Sample.DataSynchronization
 {
     /// <summary>
@@ -44,18 +41,6 @@ namespace GameFramework.Sample.DataSynchronization
         [GameEngine.OnAspectAfterCall(GameEngine.AspectBehaviourType.Destroy)]
         static void Destroy(this Monster self)
         {
-        }
-
-        public static string ToMonsterString(this Monster self)
-        {
-            StringBuilder sb = new StringBuilder();
-
-            sb.AppendFormat("[怪物对象]:{0},", self.ToSoldierString());
-
-            SpawnComponent spawnComponent = self.GetComponent<SpawnComponent>();
-            sb.AppendFormat("出生点={{{0},{1},{2}}},", spawnComponent.born_position.x, spawnComponent.born_position.y, spawnComponent.born_position.z);
-
-            return sb.ToString();
         }
     }
 }

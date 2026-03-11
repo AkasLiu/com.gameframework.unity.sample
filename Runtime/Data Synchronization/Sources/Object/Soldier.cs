@@ -21,6 +21,8 @@
 /// THE SOFTWARE.
 /// -------------------------------------------------------------------------------
 
+using System.Text;
+
 namespace GameFramework.Sample.DataSynchronization
 {
     /// <summary>
@@ -31,8 +33,19 @@ namespace GameFramework.Sample.DataSynchronization
     [GameEngine.CComponentAutomaticActivationOfEntity(typeof(AttributeComponent))]
     [GameEngine.CComponentAutomaticActivationOfEntity(typeof(TransformComponent))]
     [GameEngine.CComponentAutomaticActivationOfEntity(typeof(SkillComponent))]
-    internal abstract class Soldier : GameEngine.CActor
+    abstract class Soldier : GameEngine.CActor
     {
+        [GameEngine.OnReplicateId()]
         public int uid;
+
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.AppendFormat("{0},", GetComponent<IdentityComponent>().ToString());
+            sb.AppendFormat("{0},", GetComponent<AttributeComponent>().ToString());
+            sb.AppendFormat("{0}", GetComponent<SkillComponent>().ToString());
+
+            return sb.ToString();
+        }
     }
 }

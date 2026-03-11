@@ -21,6 +21,8 @@
 /// THE SOFTWARE.
 /// -------------------------------------------------------------------------------
 
+using System.Text;
+
 namespace GameFramework.Sample.DataSynchronization
 {
     /// <summary>
@@ -28,7 +30,14 @@ namespace GameFramework.Sample.DataSynchronization
     /// </summary>
     [GameEngine.CActorClass("Monster")]
     [GameEngine.CComponentAutomaticActivationOfEntity(typeof(SpawnComponent))]
-    internal abstract class Monster : Soldier
+    abstract class Monster : Soldier
     {
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.AppendFormat("{0},", base.ToString());
+            sb.AppendFormat("{0}", GetComponent<SpawnComponent>().ToString());
+            return sb.ToString();
+        }
     }
 }

@@ -23,13 +23,20 @@
 
 using System.Collections;
 using System.Collections.Generic;
+using System.Text;
 
 namespace GameFramework.Sample.DataSynchronization
 {
     /// <summary>
     /// 哥布林怪物对象类
     /// </summary>
-    internal class Goblin : Monster
+    class Goblin : Monster
     {
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.AppendFormat("哥布林：{0}", base.ToString());
+            return base.ToString();
+        }
     }
 }

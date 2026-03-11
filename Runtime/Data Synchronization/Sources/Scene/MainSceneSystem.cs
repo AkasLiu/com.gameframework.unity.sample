@@ -1,6 +1,6 @@
 /// -------------------------------------------------------------------------------
 /// Copyright (C) 2024 - 2025, Hurley, Independent Studio.
-/// Copyright (C) 2025 - 2026, Hainan Yuanyou Information Technology Co., Ltd. Guangzhou Branch
+/// Copyright (C) 2025, Hainan Yuanyou Information Technology Co., Ltd. Guangzhou Branch
 ///
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
@@ -21,39 +21,42 @@
 /// THE SOFTWARE.
 /// -------------------------------------------------------------------------------
 
-using System.Collections.Generic;
-using System.Text;
-
 namespace GameFramework.Sample.DataSynchronization
 {
     /// <summary>
-    /// 属性组件类
+    /// 主场景逻辑类
     /// </summary>
-    [GameEngine.CComponentClass("AttributeComponent")]
-    internal class AttributeComponent : GameEngine.CComponent
+    static class MainSceneSystem
     {
-        [GameEngine.OnReplicateField()]
-        public int level;
-
-        [GameEngine.OnReplicateField()]
-        public int exp;
-
-        [GameEngine.OnReplicateField()]
-        public int health;
-
-        [GameEngine.OnReplicateField()]
-        public int energy;
-
-        [GameEngine.OnReplicateField()]
-        public int attack;
-
-        public override string ToString()
+        [GameEngine.OnAspectBeforeCall(GameEngine.AspectBehaviourType.Awake)]
+        static void BeforeAwake(this MainScene self)
         {
-            StringBuilder sb = new StringBuilder();
-            sb.AppendFormat("等级={0},经验={1},生命={2},体力={3},攻击={4}",
-                this.level, this.exp, this.health, this.energy, this.attack);
+        }
 
-            return sb.ToString();
+        [GameEngine.OnAspectBeforeCall(GameEngine.AspectBehaviourType.Start)]
+        static void BeforeStart(this MainScene self)
+        {
+            self.PrintUsage();
+        }
+
+        [GameEngine.OnAspectBeforeCall(GameEngine.AspectBehaviourType.Update)]
+        static void BeforeUpdate(this MainScene self)
+        {
+        }
+
+        [GameEngine.OnAspectBeforeCall(GameEngine.AspectBehaviourType.LateUpdate)]
+        static void BeforeLateUpdate(this MainScene self)
+        {
+        }
+
+        [GameEngine.OnAspectAfterCall(GameEngine.AspectBehaviourType.Destroy)]
+        static void AfterDestroy(this MainScene self)
+        {
+        }
+
+        public static void PrintUsage(this MainScene self)
+        {
+            Debugger.Info(@"使用说明：Ａ输出对象信息；R待定；①创建玩家实例；②销毁玩家实例；③创建怪物实例；④销毁怪物实例；⑤待定；⑥待定；");
         }
     }
 }

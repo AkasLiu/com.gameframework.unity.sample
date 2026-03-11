@@ -21,6 +21,8 @@
 /// THE SOFTWARE.
 /// -------------------------------------------------------------------------------
 
+using System.Text;
+
 namespace GameFramework.Sample.DataSynchronization
 {
     /// <summary>
@@ -30,5 +32,12 @@ namespace GameFramework.Sample.DataSynchronization
     internal class SpawnComponent : GameEngine.CComponent
     {
         public UnityEngine.Vector3 born_position;
+
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.AppendFormat("出生点={{{0},{1},{2}}}", born_position.x, born_position.y, born_position.z);
+            return base.ToString();
+        }
     }
 }

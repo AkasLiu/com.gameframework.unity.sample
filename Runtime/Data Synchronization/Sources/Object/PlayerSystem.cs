@@ -21,8 +21,6 @@
 /// THE SOFTWARE.
 /// -------------------------------------------------------------------------------
 
-using System.Text;
-
 namespace GameFramework.Sample.DataSynchronization
 {
     /// <summary>
@@ -45,24 +43,16 @@ namespace GameFramework.Sample.DataSynchronization
         {
         }
 
-        public static string ToPlayerString(this Player self)
+        [GameEngine.OnReplicateDispatchCall("player.inventory.item", GameEngine.ReplicateAnnounceType.Changed)]
+        static void OnPlayerChangedNotify(string tags, GameEngine.ReplicateAnnounceType announceType)
         {
-            StringBuilder sb = new StringBuilder();
+            Debugger.Info("??????????????????");
+        }
 
-            sb.AppendFormat("[玩家对象]:{0},", self.ToSoldierString());
-
-            InventoryComponent inventoryComponent = self.GetComponent<InventoryComponent>();
-            sb.Append(@"背包={");
-            for (int n = 0; null != inventoryComponent.items && n < inventoryComponent.items.Count; ++n)
-            {
-                InventoryComponent.ItemInfo item = inventoryComponent.items[n];
-
-                if (n > 0) sb.Append(",");
-                sb.AppendFormat("[{0},{1},{2},{3},{4}]", item.id, item.pos, item.quantity, item.using_time, item.last_used_time);
-            }
-            sb.Append(@"}");
-
-            return sb.ToString();
+        [GameEngine.OnReplicateDispatchCall(typeof(Player), "player.inventory.item", GameEngine.ReplicateAnnounceType.Changed)]
+        static void OnPlayerChangedEachEveryoneNotify(Player player, string tags, GameEngine.ReplicateAnnounceType announceType)
+        {
+            Debugger.Info("player = {%s} ??????????????????", player.ToString());
         }
     }
 }
