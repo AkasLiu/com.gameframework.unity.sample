@@ -49,10 +49,22 @@ namespace GameFramework.Sample.DataSynchronization
             Debugger.Info("??????????????????");
         }
 
+        [GameEngine.OnReplicateDispatchCall("player.skill", GameEngine.ReplicateAnnounceType.Changed)]
+        static void OnPlayerSkillChangedNotify(string tags, GameEngine.ReplicateAnnounceType announceType)
+        {
+            Debugger.Info("!!!!!!!!!!!!!!!!!!!!");
+        }
+
         [GameEngine.OnReplicateDispatchCall(typeof(Player), "player.inventory.item", GameEngine.ReplicateAnnounceType.Changed)]
         static void OnPlayerChangedEachEveryoneNotify(Player player, string tags, GameEngine.ReplicateAnnounceType announceType)
         {
-            Debugger.Info("player = {%s} ??????????????????", player.ToString());
+            Debugger.Info("?????????????????? player = {%s}", player.ToString());
+        }
+
+        [GameEngine.ReplicateCommunicateBindingOfTarget("player.inventory.item", GameEngine.ReplicateAnnounceType.Changed)]
+        static void OnPlayerItemChangedBySelfNotify(this Player self, string tags, GameEngine.ReplicateAnnounceType announceType)
+        {
+            Debugger.Info("~~~~~~~~~~~~~~~~~~ player = {%s}", self.ToString());
         }
     }
 }

@@ -52,6 +52,12 @@ namespace GameFramework.Sample.DataSynchronization
             GameEngine.GameApi.Push("player.inventory.item", GameEngine.ReplicateAnnounceType.Changed);
         }
 
+        [GameEngine.OnInputDispatchCall((int) UnityEngine.KeyCode.X, GameEngine.InputOperationType.Released)]
+        static void TestReplicateTags_2(int keycode, int operationType)
+        {
+            GameEngine.GameApi.Push("player.skill", GameEngine.ReplicateAnnounceType.Changed);
+        }
+
         [GameEngine.OnInputDispatchCall((int) UnityEngine.KeyCode.Alpha1, GameEngine.InputOperationType.Released)]
         static void OnCreatePlayerObject(int keycode, int operationType)
         {
