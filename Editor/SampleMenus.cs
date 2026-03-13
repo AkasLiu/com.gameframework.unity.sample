@@ -59,7 +59,7 @@ namespace GameFramework.Editor.Sample
         static void OnTutorialInstalled()
         {
             SettingsExportStep step = new SettingsExportStep();
-            step.Install();
+            step.Install(() => { }, () => { }, () => { }, (msg) => { });
         }
     }
 }
