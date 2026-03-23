@@ -28,26 +28,26 @@ namespace GameFramework.Sample.DispatchCall
     /// </summary>
     static class EventBuilder
     {
-        [GameEngine.OnInputDispatchCall((int) UnityEngine.KeyCode.Alpha1, GameEngine.InputOperationType.Released)]
-        static void OnPlayerDisplayInfoEventSend(int keycode, int operationType)
+        [GameEngine.OnInputDispatchCall(GameEngine.VirtualKeyCode.Alpha1, GameEngine.InputOperationType.Released)]
+        static void OnPlayerDisplayInfoEventSend(GameEngine.VirtualKeyCode keyCode, GameEngine.InputOperationType operationType)
         {
             GameEngine.GameApi.Send(EventNotify.PlayerDisplayInfo, "疯狂星期四", 8080);
         }
 
-        [GameEngine.OnInputDispatchCall((int) UnityEngine.KeyCode.Alpha2, GameEngine.InputOperationType.Released)]
-        static void OnPlayerSearchAllEnemiesEventSend(int keycode, int operationType)
+        [GameEngine.OnInputDispatchCall(GameEngine.VirtualKeyCode.Alpha2, GameEngine.InputOperationType.Released)]
+        static void OnPlayerSearchAllEnemiesEventSend(GameEngine.VirtualKeyCode keyCode, GameEngine.InputOperationType operationType)
         {
             GameEngine.GameApi.Send(EventNotify.PlayerSearchAllEnemies);
         }
 
-        [GameEngine.OnInputDispatchCall((int) UnityEngine.KeyCode.Alpha3, GameEngine.InputOperationType.Released)]
-        static void OnPlayerLockOneTargetEventSend(int keycode, int operationType)
+        [GameEngine.OnInputDispatchCall(GameEngine.VirtualKeyCode.Alpha3, GameEngine.InputOperationType.Released)]
+        static void OnPlayerLockOneTargetEventSend(GameEngine.VirtualKeyCode keyCode, GameEngine.InputOperationType operationType)
         {
             int r = NovaEngine.Utility.Random.Next(2);
             int uid = 0;
             if (r > 0)
             {
-                Monster monster = GameEngine.SceneHandler.Instance.GetCurrentScene().GetComponent<MainDataComponent>().GetRandomMonsterObject();
+                Monster monster = GameEngine.GameApi.GetCurrentSceneComponent<MainDataComponent>().GetRandomMonsterObject();
                 if (null != monster)
                 {
                     uid = monster.GetComponent<IdentityComponent>().objectID;
@@ -56,22 +56,22 @@ namespace GameFramework.Sample.DispatchCall
             GameEngine.GameApi.Send(EventNotify.PlayerLockOneTarget, uid);
         }
 
-        [GameEngine.OnInputDispatchCall((int) UnityEngine.KeyCode.Alpha4, GameEngine.InputOperationType.Released)]
-        static void OnPlayerUpgradeEventSend(int keycode, int operationType)
+        [GameEngine.OnInputDispatchCall(GameEngine.VirtualKeyCode.Alpha4, GameEngine.InputOperationType.Released)]
+        static void OnPlayerUpgradeEventSend(GameEngine.VirtualKeyCode keyCode, GameEngine.InputOperationType operationType)
         {
             int exp = NovaEngine.Utility.Random.Next(1000);
 
             GameEngine.GameApi.Send(EventNotify.PlayerUpgrade, exp);
         }
 
-        [GameEngine.OnInputDispatchCall((int) UnityEngine.KeyCode.Alpha5, GameEngine.InputOperationType.Released)]
-        static void OnPlayerChaseTargetEventSend(int keycode, int operationType)
+        [GameEngine.OnInputDispatchCall(GameEngine.VirtualKeyCode.Alpha5, GameEngine.InputOperationType.Released)]
+        static void OnPlayerChaseTargetEventSend(GameEngine.VirtualKeyCode keyCode, GameEngine.InputOperationType operationType)
         {
             GameEngine.GameApi.Send(EventNotify.PlayerChaseTarget);
         }
 
-        [GameEngine.OnInputDispatchCall((int) UnityEngine.KeyCode.Alpha6, GameEngine.InputOperationType.Released)]
-        static void OnActorAttributeDisplayEventSend(int keycode, int operationType)
+        [GameEngine.OnInputDispatchCall(GameEngine.VirtualKeyCode.Alpha6, GameEngine.InputOperationType.Released)]
+        static void OnActorAttributeDisplayEventSend(GameEngine.VirtualKeyCode keyCode, GameEngine.InputOperationType operationType)
         {
             GameEngine.GameApi.Send(EventNotify.DisplayAttribute);
         }
