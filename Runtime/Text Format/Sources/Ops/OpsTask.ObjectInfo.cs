@@ -29,7 +29,7 @@ namespace GameFramework.Sample.TextFormat
     static partial class OpsTask
     {
         [OnInput(TaskCode_ObjectInfo, GameEngine.InputOperationType.Released)]
-        static void TestObjectInfo(int keycode, int operationType)
+        static void TestObjectInfo(GameEngine.VirtualKeyCode keycode, GameEngine.InputOperationType operationType)
         {
             MainDataComponent mainDataComponent = GameEngine.GameApi.GetCurrentScene().GetComponent<MainDataComponent>();
             Player player = mainDataComponent.player;

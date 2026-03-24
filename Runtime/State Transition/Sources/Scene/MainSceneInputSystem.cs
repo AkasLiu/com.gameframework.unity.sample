@@ -28,7 +28,7 @@ namespace GameFramework.Sample.StateTransition
     /// </summary>
     static class MainSceneInputSystem
     {
-        [OnInput((int) UnityEngine.KeyCode.Alpha1, GameEngine.InputOperationType.Released)]
+        [OnInput(GameEngine.VirtualKeyCode.Alpha1, GameEngine.InputOperationType.Released)]
         static void OnInputOperationForCreatePlayer(this MainScene self)
         {
             MainDataComponent mainDataComponent = self.GetComponent<MainDataComponent>();
@@ -38,7 +38,7 @@ namespace GameFramework.Sample.StateTransition
             self.PrintUsage();
         }
 
-        [OnInput((int) UnityEngine.KeyCode.Alpha2, GameEngine.InputOperationType.Pressed)]
+        [OnInput(GameEngine.VirtualKeyCode.Alpha2, GameEngine.InputOperationType.Pressed)]
         static void OnInputOperationForPlayerMoveLeft(this MainScene self)
         {
             MainDataComponent mainDataComponent = self.GetComponent<MainDataComponent>();
@@ -54,7 +54,7 @@ namespace GameFramework.Sample.StateTransition
             // self.PrintUsage();
         }
 
-        [OnInput((int) UnityEngine.KeyCode.Alpha3, GameEngine.InputOperationType.Pressed)]
+        [OnInput(GameEngine.VirtualKeyCode.Alpha3, GameEngine.InputOperationType.Pressed)]
         static void OnInputOperationForPlayerMoveRight(this MainScene self)
         {
             MainDataComponent mainDataComponent = self.GetComponent<MainDataComponent>();
@@ -70,7 +70,7 @@ namespace GameFramework.Sample.StateTransition
             // self.PrintUsage();
         }
 
-        [OnInput((int) UnityEngine.KeyCode.Alpha4, GameEngine.InputOperationType.Pressed)]
+        [OnInput(GameEngine.VirtualKeyCode.Alpha4, GameEngine.InputOperationType.Pressed)]
         static void OnInputOperationForPlayerJump(this MainScene self)
         {
             MainDataComponent mainDataComponent = self.GetComponent<MainDataComponent>();
@@ -88,7 +88,7 @@ namespace GameFramework.Sample.StateTransition
             // self.PrintUsage();
         }
 
-        [OnInput((int) UnityEngine.KeyCode.Alpha5, GameEngine.InputOperationType.Released)]
+        [OnInput(GameEngine.VirtualKeyCode.Alpha5, GameEngine.InputOperationType.Released)]
         static void OnInputOperationForRemovePlayer(this MainScene self)
         {
             MainDataComponent mainDataComponent = self.GetComponent<MainDataComponent>();
@@ -98,9 +98,9 @@ namespace GameFramework.Sample.StateTransition
             self.PrintUsage();
         }
 
-        [OnInput((int) UnityEngine.KeyCode.Alpha2, GameEngine.InputOperationType.Released)]
-        [OnInput((int) UnityEngine.KeyCode.Alpha3, GameEngine.InputOperationType.Released)]
-        static void OnInputOperationForPlayerMoveStop(this MainScene self, int keycode, int operationType)
+        [OnInput(GameEngine.VirtualKeyCode.Alpha2, GameEngine.InputOperationType.Released)]
+        [OnInput(GameEngine.VirtualKeyCode.Alpha3, GameEngine.InputOperationType.Released)]
+        static void OnInputOperationForPlayerMoveStop(this MainScene self, GameEngine.VirtualKeyCode keycode, GameEngine.InputOperationType operationType)
         {
             MainDataComponent mainDataComponent = self.GetComponent<MainDataComponent>();
             Player player = mainDataComponent.player;

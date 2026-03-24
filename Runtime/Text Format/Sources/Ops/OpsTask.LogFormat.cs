@@ -31,7 +31,7 @@ namespace GameFramework.Sample.TextFormat
     static partial class OpsTask
     {
         [OnInput(TaskCode_LogFormat, GameEngine.InputOperationType.Released)]
-        static void TestLogFormat(int keycode, int operationType)
+        static void TestLogFormat(GameEngine.VirtualKeyCode keycode, GameEngine.InputOperationType operationType)
         {
             int num = 1976123159;
             float num2 = 200101.5959337f;

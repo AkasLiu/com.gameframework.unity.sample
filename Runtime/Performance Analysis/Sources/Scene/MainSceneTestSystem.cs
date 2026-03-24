@@ -39,8 +39,8 @@ namespace GameFramework.Sample.PerformanceAnalysis
             ++_count;
         }
 
-        [OnInput((int) UnityEngine.KeyCode.Alpha6, GameEngine.InputOperationType.Released)]
-        static void OnSceneTestingInputed(this MainScene self, int keycode, int operationType)
+        [OnInput(GameEngine.VirtualKeyCode.Alpha6, GameEngine.InputOperationType.Released)]
+        static void OnSceneTestingInputed(this MainScene self, GameEngine.VirtualKeyCode keycode, GameEngine.InputOperationType operationType)
         {
             Type targetType = typeof(MainSceneTestSystem);
             MethodInfo methodInfo = targetType.GetMethod("AccumulateInvokeCount", BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static);

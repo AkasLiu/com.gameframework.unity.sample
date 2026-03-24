@@ -31,7 +31,7 @@ namespace GameFramework.Sample.TextFormat
     static partial class OpsTask
     {
         [OnInput(TaskCode_DataCollection, GameEngine.InputOperationType.Released)]
-        static void TestDataCollection(int keycode, int operationType)
+        static void TestDataCollection(GameEngine.VirtualKeyCode keycode, GameEngine.InputOperationType operationType)
         {
             int[] arr_int = new int[2];
             arr_int[0] = 1;

@@ -30,8 +30,8 @@ namespace GameFramework.Sample.DispatchCall
     /// </summary>
     static class MainSceneInputSystem
     {
-        [OnInput((int) UnityEngine.KeyCode.E, GameEngine.InputOperationType.Released)]
-        static void OnEnterWorldMessageSend(int keycode, int operationType)
+        [OnInput(GameEngine.VirtualKeyCode.E, GameEngine.InputOperationType.Released)]
+        static void OnEnterWorldMessageSend(GameEngine.VirtualKeyCode keycode, GameEngine.InputOperationType operationType)
         {
             MainScene main = GameEngine.SceneHandler.Instance.GetCurrentScene() as MainScene;
             Debugger.Assert(null != main, "Invalid activated scene.");
@@ -43,8 +43,8 @@ namespace GameFramework.Sample.DispatchCall
             });
         }
 
-        [OnInput((int) UnityEngine.KeyCode.A, GameEngine.InputOperationType.Released)]
-        static void OnLevelSpawnMessageSend(int keycode, int operationType)
+        [OnInput(GameEngine.VirtualKeyCode.A, GameEngine.InputOperationType.Released)]
+        static void OnLevelSpawnMessageSend(GameEngine.VirtualKeyCode keycode, GameEngine.InputOperationType operationType)
         {
             List<MonsterInfo> monsters = new List<MonsterInfo>();
             int total = NovaEngine.Utility.Random.Next(3) + 1;
@@ -71,8 +71,8 @@ namespace GameFramework.Sample.DispatchCall
             });
         }
 
-        [OnInput((int) UnityEngine.KeyCode.Q, GameEngine.InputOperationType.Released)]
-        static void OnLeaveWorldMessageSend(int keycode, int operationType)
+        [OnInput(GameEngine.VirtualKeyCode.Q, GameEngine.InputOperationType.Released)]
+        static void OnLeaveWorldMessageSend(GameEngine.VirtualKeyCode keycode, GameEngine.InputOperationType operationType)
         {
             GameEngine.GameApi.OnMessageSimulation(new LeaveWorldResp()
             {

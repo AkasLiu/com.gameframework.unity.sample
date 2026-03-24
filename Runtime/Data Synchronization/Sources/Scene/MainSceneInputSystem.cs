@@ -30,8 +30,8 @@ namespace GameFramework.Sample.DataSynchronization
     /// </summary>
     static class MainSceneInputSystem
     {
-        [OnInput((int) UnityEngine.KeyCode.A, GameEngine.InputOperationType.Released)]
-        static void OnDisplayAllObjects(int keycode, int operationType)
+        [OnInput(GameEngine.VirtualKeyCode.A, GameEngine.InputOperationType.Released)]
+        static void OnDisplayAllObjects(GameEngine.VirtualKeyCode keycode, GameEngine.InputOperationType operationType)
         {
             MainDataComponent mainDataComponent = GameEngine.GameApi.GetCurrentSceneComponent<MainDataComponent>();
             for (int n = 0; n < mainDataComponent.players.Count; ++n)
@@ -46,20 +46,20 @@ namespace GameFramework.Sample.DataSynchronization
             GameEngine.GameApi.GetCurrentScene<MainScene>().PrintUsage();
         }
 
-        [OnInput((int) UnityEngine.KeyCode.Z, GameEngine.InputOperationType.Released)]
-        static void TestReplicateTags_1(int keycode, int operationType)
+        [OnInput(GameEngine.VirtualKeyCode.Z, GameEngine.InputOperationType.Released)]
+        static void TestReplicateTags_1(GameEngine.VirtualKeyCode keycode, GameEngine.InputOperationType operationType)
         {
             GameEngine.GameApi.Push("player.inventory.item", GameEngine.ReplicateAnnounceType.Changed);
         }
 
-        [OnInput((int) UnityEngine.KeyCode.X, GameEngine.InputOperationType.Released)]
-        static void TestReplicateTags_2(int keycode, int operationType)
+        [OnInput(GameEngine.VirtualKeyCode.X, GameEngine.InputOperationType.Released)]
+        static void TestReplicateTags_2(GameEngine.VirtualKeyCode keycode, GameEngine.InputOperationType operationType)
         {
             GameEngine.GameApi.Push("player.skill", GameEngine.ReplicateAnnounceType.Changed);
         }
 
-        [OnInput((int) UnityEngine.KeyCode.Alpha1, GameEngine.InputOperationType.Released)]
-        static void OnCreatePlayerObject(int keycode, int operationType)
+        [OnInput(GameEngine.VirtualKeyCode.Alpha1, GameEngine.InputOperationType.Released)]
+        static void OnCreatePlayerObject(GameEngine.VirtualKeyCode keycode, GameEngine.InputOperationType operationType)
         {
             Player player = DataBuilder.CreatePlayer();
 
@@ -67,8 +67,8 @@ namespace GameFramework.Sample.DataSynchronization
             mainDataComponent.players.Add(player);
         }
 
-        [OnInput((int) UnityEngine.KeyCode.Alpha2, GameEngine.InputOperationType.Released)]
-        static void OnDestroyPlayerObject(int keycode, int operationType)
+        [OnInput(GameEngine.VirtualKeyCode.Alpha2, GameEngine.InputOperationType.Released)]
+        static void OnDestroyPlayerObject(GameEngine.VirtualKeyCode keycode, GameEngine.InputOperationType operationType)
         {
             MainDataComponent mainDataComponent = GameEngine.GameApi.GetCurrentSceneComponent<MainDataComponent>();
             if (mainDataComponent.players.Count > 0)
@@ -78,8 +78,8 @@ namespace GameFramework.Sample.DataSynchronization
             }
         }
 
-        [OnInput((int) UnityEngine.KeyCode.Alpha3, GameEngine.InputOperationType.Released)]
-        static void OnCreateMonsterObject(int keycode, int operationType)
+        [OnInput(GameEngine.VirtualKeyCode.Alpha3, GameEngine.InputOperationType.Released)]
+        static void OnCreateMonsterObject(GameEngine.VirtualKeyCode keycode, GameEngine.InputOperationType operationType)
         {
             Monster monster = DataBuilder.CreateMonster();
 
@@ -87,8 +87,8 @@ namespace GameFramework.Sample.DataSynchronization
             mainDataComponent.monsters.Add(monster);
         }
 
-        [OnInput((int) UnityEngine.KeyCode.Alpha4, GameEngine.InputOperationType.Released)]
-        static void OnDestroyMonsterObject(int keycode, int operationType)
+        [OnInput(GameEngine.VirtualKeyCode.Alpha4, GameEngine.InputOperationType.Released)]
+        static void OnDestroyMonsterObject(GameEngine.VirtualKeyCode keycode, GameEngine.InputOperationType operationType)
         {
             MainDataComponent mainDataComponent = GameEngine.GameApi.GetCurrentSceneComponent<MainDataComponent>();
             if (mainDataComponent.monsters.Count > 0)

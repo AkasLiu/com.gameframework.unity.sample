@@ -28,8 +28,8 @@ namespace GameFramework.Sample.ObjectLifecycle
     /// </summary>
     static class MainSceneInputSystem
     {
-        [OnInput((int) UnityEngine.KeyCode.A, GameEngine.InputOperationType.Released)]
-        static void OnSceneInputed(int keycode, int operationType)
+        [OnInput(GameEngine.VirtualKeyCode.A, GameEngine.InputOperationType.Released)]
+        static void OnSceneInputed(GameEngine.VirtualKeyCode keycode, GameEngine.InputOperationType operationType)
         {
             MainScene main = GameEngine.SceneHandler.Instance.GetCurrentScene() as MainScene;
             Debugger.Assert(null != main, "Invalid activated scene.");

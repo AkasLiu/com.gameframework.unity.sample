@@ -100,26 +100,26 @@ namespace GameFramework.Sample.DispatchCall
             self.GetComponent<MoveComponent>().OnMovingStart();
         }
 
-        [OnInput((int) UnityEngine.KeyCode.UpArrow, GameEngine.InputOperationType.Released)]
-        [OnInput((int) UnityEngine.KeyCode.DownArrow, GameEngine.InputOperationType.Released)]
-        [OnInput((int) UnityEngine.KeyCode.LeftArrow, GameEngine.InputOperationType.Released)]
-        [OnInput((int) UnityEngine.KeyCode.RightArrow, GameEngine.InputOperationType.Released)]
-        private static void OnPlayerMoveTo(this Player self, int keycode, int operationType)
+        [OnInput(GameEngine.VirtualKeyCode.UpArrow, GameEngine.InputOperationType.Released)]
+        [OnInput(GameEngine.VirtualKeyCode.DownArrow, GameEngine.InputOperationType.Released)]
+        [OnInput(GameEngine.VirtualKeyCode.LeftArrow, GameEngine.InputOperationType.Released)]
+        [OnInput(GameEngine.VirtualKeyCode.RightArrow, GameEngine.InputOperationType.Released)]
+        private static void OnPlayerMoveTo(this Player self, GameEngine.VirtualKeyCode keycode, GameEngine.InputOperationType operationType)
         {
             Debugger.Info("玩家对象‘{%s}’开始移动！", self.GetComponent<IdentityComponent>().objectName);
 
             switch (keycode)
             {
-                case (int) UnityEngine.KeyCode.UpArrow:
+                case GameEngine.VirtualKeyCode.UpArrow:
                     self.GetComponent<MoveComponent>().OnMoveAlongTheDirection(UnityEngine.Vector3.up);
                     break;
-                case (int) UnityEngine.KeyCode.DownArrow:
+                case GameEngine.VirtualKeyCode.DownArrow:
                     self.GetComponent<MoveComponent>().OnMoveAlongTheDirection(UnityEngine.Vector3.down);
                     break;
-                case (int) UnityEngine.KeyCode.LeftArrow:
+                case GameEngine.VirtualKeyCode.LeftArrow:
                     self.GetComponent<MoveComponent>().OnMoveAlongTheDirection(UnityEngine.Vector3.left);
                     break;
-                case (int) UnityEngine.KeyCode.RightArrow:
+                case GameEngine.VirtualKeyCode.RightArrow:
                     self.GetComponent<MoveComponent>().OnMoveAlongTheDirection(UnityEngine.Vector3.right);
                     break;
             }

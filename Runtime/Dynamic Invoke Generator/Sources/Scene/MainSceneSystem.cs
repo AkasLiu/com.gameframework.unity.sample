@@ -43,8 +43,8 @@ namespace GameFramework.Sample.DynamicInvokeGenerator
         {
         }
 
-        [OnInput((int) UnityEngine.KeyCode.A, GameEngine.InputOperationType.Released)]
-        static void OnSceneCaseRunningInputed(this MainScene self, int keycode, int operationType)
+        [OnInput(GameEngine.VirtualKeyCode.A, GameEngine.InputOperationType.Released)]
+        static void OnSceneCaseRunningInputed(this MainScene self, GameEngine.VirtualKeyCode keycode, GameEngine.InputOperationType operationType)
         {
             FunctionGenerationComparison.TestMemberFunctionBuild();
         }

@@ -28,10 +28,10 @@ namespace GameFramework.Sample.DispatchCall
     /// </summary>
     static class AttackComponentSystem
     {
-        [OnInput((int) UnityEngine.KeyCode.K, GameEngine.InputOperationType.Released)]
-        private static void OnAttackInputObserve(this AttackComponent self, int keycode, int operationType)
+        [OnInput(GameEngine.VirtualKeyCode.K, GameEngine.InputOperationType.Released)]
+        private static void OnAttackInputObserve(this AttackComponent self, GameEngine.VirtualKeyCode keycode, GameEngine.InputOperationType operationType)
         {
-            Debugger.Warn("OnAttackInputObserve: {%s} - {%d}.", self.GetComponent<IdentityComponent>().objectName, keycode);
+            Debugger.Warn("OnAttackInputObserve: {%s} - {%i}.", self.GetComponent<IdentityComponent>().objectName, keycode);
         }
     }
 }

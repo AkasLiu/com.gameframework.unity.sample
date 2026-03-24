@@ -52,8 +52,8 @@ namespace GameFramework.Sample.DispatchCall
             Debugger.Info("怪物对象成功接收事件[{%d}]，信息输出：{%s}！", eventID, self.ToMonsterString());
         }
 
-        [OnInput((int) UnityEngine.KeyCode.T, GameEngine.InputOperationType.Released)]
-        private static void OnTalkInputObserve(this Monster self, int keycode, int operationType)
+        [OnInput(GameEngine.VirtualKeyCode.T, GameEngine.InputOperationType.Released)]
+        private static void OnTalkInputObserve(this Monster self, GameEngine.VirtualKeyCode keycode, GameEngine.InputOperationType operationType)
         {
             string[] infos = new string[5];
             infos[0] = "被调戏";

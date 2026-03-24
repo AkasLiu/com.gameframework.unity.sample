@@ -38,8 +38,8 @@ namespace GameFramework.Sample.PerformanceAnalysis
             PrintUsage();
         }
 
-        [OnInput((int) UnityEngine.KeyCode.Alpha1, GameEngine.InputOperationType.Released)]
-        static void OnSceneDataCreatingInputed(this MainScene self, int keycode, int operationType)
+        [OnInput(GameEngine.VirtualKeyCode.Alpha1, GameEngine.InputOperationType.Released)]
+        static void OnSceneDataCreatingInputed(this MainScene self, GameEngine.VirtualKeyCode keycode, GameEngine.InputOperationType operationType)
         {
             MainDataComponent mainDataComponent = self.GetComponent<MainDataComponent>();
             if (mainDataComponent.game_players != null && mainDataComponent.game_players.Count > 0)
@@ -83,8 +83,8 @@ namespace GameFramework.Sample.PerformanceAnalysis
             PrintUsage();
         }
 
-        [OnInput((int) UnityEngine.KeyCode.Alpha2, GameEngine.InputOperationType.Released)]
-        static void OnSceneDataRunningInputed(this MainScene self, int keycode, int operationType)
+        [OnInput(GameEngine.VirtualKeyCode.Alpha2, GameEngine.InputOperationType.Released)]
+        static void OnSceneDataRunningInputed(this MainScene self, GameEngine.VirtualKeyCode keycode, GameEngine.InputOperationType operationType)
         {
             MainDataComponent mainDataComponent = self.GetComponent<MainDataComponent>();
             if (mainDataComponent.game_players == null || mainDataComponent.game_players.Count <= 0)
@@ -130,8 +130,8 @@ namespace GameFramework.Sample.PerformanceAnalysis
             PrintUsage();
         }
 
-        [OnInput((int) UnityEngine.KeyCode.Alpha3, GameEngine.InputOperationType.Released)]
-        static void OnSceneDataPrintingInputed(this MainScene self, int keycode, int operationType)
+        [OnInput(GameEngine.VirtualKeyCode.Alpha3, GameEngine.InputOperationType.Released)]
+        static void OnSceneDataPrintingInputed(this MainScene self, GameEngine.VirtualKeyCode keycode, GameEngine.InputOperationType operationType)
         {
             MainDataComponent mainDataComponent = self.GetComponent<MainDataComponent>();
             if (mainDataComponent.game_players == null || mainDataComponent.game_players.Count <= 0)
@@ -152,8 +152,8 @@ namespace GameFramework.Sample.PerformanceAnalysis
             PrintUsage();
         }
 
-        [OnInput((int) UnityEngine.KeyCode.Alpha4, GameEngine.InputOperationType.Released)]
-        static void OnSceneDataResettingInputed(this MainScene self, int keycode, int operationType)
+        [OnInput(GameEngine.VirtualKeyCode.Alpha4, GameEngine.InputOperationType.Released)]
+        static void OnSceneDataResettingInputed(this MainScene self, GameEngine.VirtualKeyCode keycode, GameEngine.InputOperationType operationType)
         {
             MainDataComponent mainDataComponent = self.GetComponent<MainDataComponent>();
             if (mainDataComponent.game_players == null || mainDataComponent.game_players.Count <= 0)
@@ -184,8 +184,8 @@ namespace GameFramework.Sample.PerformanceAnalysis
             PrintUsage();
         }
 
-        [OnInput((int) UnityEngine.KeyCode.Alpha5, GameEngine.InputOperationType.Released)]
-        static void OnSceneDataRemovingInputed(this MainScene self, int keycode, int operationType)
+        [OnInput(GameEngine.VirtualKeyCode.Alpha5, GameEngine.InputOperationType.Released)]
+        static void OnSceneDataRemovingInputed(this MainScene self, GameEngine.VirtualKeyCode keycode, GameEngine.InputOperationType operationType)
         {
             MainDataComponent mainDataComponent = self.GetComponent<MainDataComponent>();
             if (mainDataComponent.game_players == null || mainDataComponent.game_players.Count <= 0)

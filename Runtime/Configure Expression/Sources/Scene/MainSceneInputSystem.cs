@@ -30,7 +30,7 @@ namespace GameFramework.Sample.ConfigureExpression
     /// </summary>
     static class MainSceneInputSystem
     {
-        [OnInput((int) UnityEngine.KeyCode.Alpha1, GameEngine.InputOperationType.Released)]
+        [OnInput(GameEngine.VirtualKeyCode.Alpha1, GameEngine.InputOperationType.Released)]
         static void OnInputOperationForNormalFunctionCall(this MainScene self)
         {
             MainDataComponent mainDataComponent = self.GetComponent<MainDataComponent>();
@@ -42,7 +42,7 @@ namespace GameFramework.Sample.ConfigureExpression
             self.PrintUsage();
         }
 
-        [OnInput((int) UnityEngine.KeyCode.Alpha2, GameEngine.InputOperationType.Released)]
+        [OnInput(GameEngine.VirtualKeyCode.Alpha2, GameEngine.InputOperationType.Released)]
         static void OnInputOperationForBeanFunctionCall(this MainScene self)
         {
             string text = @"震屏(上下模式,3,1.5)

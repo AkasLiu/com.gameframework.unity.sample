@@ -32,8 +32,8 @@ namespace GameFramework.Sample.DependencyInject
     /// </summary>
     static class MainSceneInputSystem
     {
-        [OnInput((int) UnityEngine.KeyCode.Alpha1, GameEngine.InputOperationType.Released)]
-        static void OnConfigureFileLoadNotify(this MainScene self, int keycode, int operationType)
+        [OnInput(GameEngine.VirtualKeyCode.Alpha1, GameEngine.InputOperationType.Released)]
+        static void OnConfigureFileLoadNotify(this MainScene self, GameEngine.VirtualKeyCode keycode, GameEngine.InputOperationType operationType)
         {
             /*
             GameEngine.ApplicationContext.LoadBeanConfigure((path, ms) =>
@@ -75,8 +75,8 @@ namespace GameFramework.Sample.DependencyInject
             GameEngine.ApplicationContext.RebindingBeanConfigureOfSymbols();
         }
 
-        [OnInput((int) UnityEngine.KeyCode.Alpha2, GameEngine.InputOperationType.Released)]
-        static void OnBeanObjectGenerateNotify(this MainScene self, int keycode, int operationType)
+        [OnInput(GameEngine.VirtualKeyCode.Alpha2, GameEngine.InputOperationType.Released)]
+        static void OnBeanObjectGenerateNotify(this MainScene self, GameEngine.VirtualKeyCode keycode, GameEngine.InputOperationType operationType)
         {
             MainDataComponent mainDataComponent = self.GetComponent<MainDataComponent>();
             if (null != mainDataComponent.targetObject)
@@ -101,8 +101,8 @@ namespace GameFramework.Sample.DependencyInject
             Debugger.Info($"成功创建名为{beanName}的Bean对象实例！");
         }
 
-        [OnInput((int) UnityEngine.KeyCode.Alpha3, GameEngine.InputOperationType.Released)]
-        static void OnBeanObjectPrintNotify(this MainScene self, int keycode, int operationType)
+        [OnInput(GameEngine.VirtualKeyCode.Alpha3, GameEngine.InputOperationType.Released)]
+        static void OnBeanObjectPrintNotify(this MainScene self, GameEngine.VirtualKeyCode keycode, GameEngine.InputOperationType operationType)
         {
             MainDataComponent mainDataComponent = self.GetComponent<MainDataComponent>();
             if (null == mainDataComponent.targetObject)
