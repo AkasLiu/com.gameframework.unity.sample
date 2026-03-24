@@ -31,7 +31,7 @@ namespace GameFramework.Sample.DispatchCall
         [OnInput(GameEngine.VirtualKeyCode.K, GameEngine.InputOperationType.Released)]
         private static void OnAttackInputObserve(this AttackComponent self, GameEngine.VirtualKeyCode keycode, GameEngine.InputOperationType operationType)
         {
-            Debugger.Warn("OnAttackInputObserve: {%s} - {%i}.", self.GetComponent<IdentityComponent>().objectName, keycode);
+            Debugger.Warn("OnAttackInputObserve: {%s} - {%v}.", self.GetComponent<IdentityComponent>().objectName, keycode);
         }
     }
 }

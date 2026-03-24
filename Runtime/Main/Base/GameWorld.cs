@@ -38,7 +38,7 @@ namespace GameFramework.Sample
             TutorialSettings settings = TutorialSettings.Instance;
             if (TutorialSampleType.Unknown == settings.TutorialSampleType)
             {
-                Debugger.Error("The current running tutorial sample type '{%i}' was invalid value, please selected correct sample type from 'TutorialSettings' assets file.", settings.TutorialSampleType);
+                Debugger.Error("The current running tutorial sample type '{%v}' was invalid value, please selected correct sample type from 'TutorialSettings' assets file.", settings.TutorialSampleType);
                 return;
             }
 
