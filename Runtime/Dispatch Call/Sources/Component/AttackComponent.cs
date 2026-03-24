@@ -26,8 +26,8 @@ namespace GameFramework.Sample.DispatchCall
     /// <summary>
     /// 攻击组件类
     /// </summary>
-    [GComponentClass("AttackComponent")]
-    internal class AttackComponent : GComponent
+    [UComponentClass("AttackComponent")]
+    internal class AttackComponent : UComponent
     {
         public int targetId;
     }

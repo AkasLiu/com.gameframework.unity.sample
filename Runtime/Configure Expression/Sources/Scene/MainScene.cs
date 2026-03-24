@@ -26,9 +26,9 @@ namespace GameFramework.Sample.ConfigureExpression
     /// <summary>
     /// 主场景类
     /// </summary>
-    [GSceneClass("Main")]
-    [GComponentAutomaticActivationOfEntity(typeof(MainDataComponent))]
-    internal class MainScene : GScene
+    [USceneClass("Main")]
+    [UComponentAutomaticActivationOfEntity(typeof(MainDataComponent))]
+    internal class MainScene : UScene
     {
     }
 }

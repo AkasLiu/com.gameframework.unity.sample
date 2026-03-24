@@ -26,11 +26,11 @@ namespace GameFramework.Sample.DispatchCall
     /// <summary>
     /// 战斗对象基类
     /// </summary>
-    [GActorClass("Soldier")]
-    [GComponentAutomaticActivationOfEntity(typeof(TransformComponent))]
-    [GComponentAutomaticActivationOfEntity(typeof(MoveComponent))]
-    [GComponentAutomaticActivationOfEntity(typeof(SkillComponent))]
-    [GComponentAutomaticActivationOfEntity(typeof(ChatComponent))]
+    [UActorClass("Soldier")]
+    [UComponentAutomaticActivationOfEntity(typeof(TransformComponent))]
+    [UComponentAutomaticActivationOfEntity(typeof(MoveComponent))]
+    [UComponentAutomaticActivationOfEntity(typeof(SkillComponent))]
+    [UComponentAutomaticActivationOfEntity(typeof(ChatComponent))]
     internal class Soldier : Actor
     {
     }

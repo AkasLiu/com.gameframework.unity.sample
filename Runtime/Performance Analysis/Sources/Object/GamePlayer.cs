@@ -26,8 +26,8 @@ namespace GameFramework.Sample.PerformanceAnalysis
     /// <summary>
     /// 通过框架Proto实现的玩家对象类
     /// </summary>
-    [GActorClass("GamePlayer")]
-    [GComponentAutomaticActivationOfEntity(typeof(GameTransformComponent))]
+    [UActorClass("GamePlayer")]
+    [UComponentAutomaticActivationOfEntity(typeof(GameTransformComponent))]
     internal class GamePlayer : GameActor
     {
         public int player_count;

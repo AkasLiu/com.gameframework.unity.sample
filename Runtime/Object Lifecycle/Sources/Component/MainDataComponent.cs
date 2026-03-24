@@ -26,8 +26,8 @@ namespace GameFramework.Sample.ObjectLifecycle
     /// <summary>
     /// 主场景数据组件类
     /// </summary>
-    [GComponentClass("MainDataComponent")]
-    internal class MainDataComponent : GComponent
+    [UComponentClass("MainDataComponent")]
+    internal class MainDataComponent : UComponent
     {
         public Player player = null;
 

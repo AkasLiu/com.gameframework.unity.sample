@@ -26,7 +26,7 @@ namespace GameFramework.Sample.TextFormat
     /// <summary>
     /// 属性组件类
     /// </summary>
-    internal class AttributeComponent : GComponent
+    internal class AttributeComponent : UComponent
     {
         public int health;
         public int mana;

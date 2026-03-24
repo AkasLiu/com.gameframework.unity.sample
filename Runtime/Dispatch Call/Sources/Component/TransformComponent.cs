@@ -26,8 +26,8 @@ namespace GameFramework.Sample.DispatchCall
     /// <summary>
     /// 变换组件类
     /// </summary>
-    [GComponentClass("TransformComponent")]
-    internal class TransformComponent : GComponent
+    [UComponentClass("TransformComponent")]
+    internal class TransformComponent : UComponent
     {
         public UnityEngine.Vector3 position;
         public UnityEngine.Vector3 rotation;

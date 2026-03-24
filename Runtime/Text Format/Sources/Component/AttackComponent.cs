@@ -26,7 +26,7 @@ namespace GameFramework.Sample.TextFormat
     /// <summary>
     /// 攻击组件类
     /// </summary>
-    internal class AttackComponent : GComponent
+    internal class AttackComponent : UComponent
     {
         public float coolingTime;
     }

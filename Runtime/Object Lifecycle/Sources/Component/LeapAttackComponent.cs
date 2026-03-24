@@ -26,7 +26,7 @@ namespace GameFramework.Sample.ObjectLifecycle
     /// <summary>
     /// 跳斩组件类
     /// </summary>
-    [GComponentClass("LeapAttackComponent")]
+    [UComponentClass("LeapAttackComponent")]
     internal class LeapAttackComponent : AttackComponent
     {
     }

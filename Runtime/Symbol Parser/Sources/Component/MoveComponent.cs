@@ -26,7 +26,7 @@ namespace GameFramework.Sample.SymbolParser
     /// <summary>
     /// 移动组件类
     /// </summary>
-    internal class MoveComponent : GComponent
+    internal class MoveComponent : UComponent
     {
         public float interval;
         public float escapedTime;

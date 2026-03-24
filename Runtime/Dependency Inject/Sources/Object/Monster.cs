@@ -26,7 +26,7 @@ namespace GameFramework.Sample.DependencyInject
     /// <summary>
     /// 怪物对象基类
     /// </summary>
-    [GActorClass("Monster")]
+    [UActorClass("Monster")]
     internal class Monster : Soldier
     {
     }

@@ -26,9 +26,9 @@ namespace GameFramework.Sample.ConfigureExpression
     /// <summary>
     /// 战斗对象基类
     /// </summary>
-    [GActorClass("Soldier")]
-    [GComponentAutomaticActivationOfEntity(typeof(IdentityComponent))]
-    internal class Soldier : GActor
+    [UActorClass("Soldier")]
+    [UComponentAutomaticActivationOfEntity(typeof(IdentityComponent))]
+    internal class Soldier : UActor
     {
     }
 }

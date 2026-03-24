@@ -26,8 +26,8 @@ namespace GameFramework.Sample.InversionOfControl
     /// <summary>
     /// 移动组件类
     /// </summary>
-    [GComponentClass("MoveComponent")]
-    internal class MoveComponent : GComponent
+    [UComponentClass("MoveComponent")]
+    internal class MoveComponent : UComponent
     {
         public MoveComponent()
         {

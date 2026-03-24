@@ -26,10 +26,10 @@ namespace GameFramework.Sample.DispatchCall
     /// <summary>
     /// 角色对象基类
     /// </summary>
-    [GActorClass("Actor")]
-    [GComponentAutomaticActivationOfEntity(typeof(IdentityComponent))]
-    [GComponentAutomaticActivationOfEntity(typeof(AttributeComponent))]
-    internal abstract class Actor : GActor
+    [UActorClass("Actor")]
+    [UComponentAutomaticActivationOfEntity(typeof(IdentityComponent))]
+    [UComponentAutomaticActivationOfEntity(typeof(AttributeComponent))]
+    internal abstract class Actor : UActor
     {
     }
 }

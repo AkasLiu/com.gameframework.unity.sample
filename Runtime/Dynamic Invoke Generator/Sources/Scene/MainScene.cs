@@ -26,8 +26,8 @@ namespace GameFramework.Sample.DynamicInvokeGenerator
     /// <summary>
     /// 主场景类
     /// </summary>
-    [GSceneClass("Main")]
-    internal class MainScene : GScene
+    [USceneClass("Main")]
+    internal class MainScene : UScene
     {
     }
 }

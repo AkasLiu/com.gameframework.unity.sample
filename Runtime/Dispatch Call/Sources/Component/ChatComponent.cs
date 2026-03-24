@@ -28,8 +28,8 @@ namespace GameFramework.Sample.DispatchCall
     /// <summary>
     /// 聊天组件类
     /// </summary>
-    [GComponentClass("ChatComponent")]
-    internal class ChatComponent : GComponent
+    [UComponentClass("ChatComponent")]
+    internal class ChatComponent : UComponent
     {
         public IList<string> messages;
 

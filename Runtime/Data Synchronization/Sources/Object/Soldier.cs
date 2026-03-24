@@ -28,12 +28,12 @@ namespace GameFramework.Sample.DataSynchronization
     /// <summary>
     /// 战斗对象基类
     /// </summary>
-    [GActorClass("Soldier")]
-    [GComponentAutomaticActivationOfEntity(typeof(IdentityComponent))]
-    [GComponentAutomaticActivationOfEntity(typeof(AttributeComponent))]
-    [GComponentAutomaticActivationOfEntity(typeof(TransformComponent))]
-    [GComponentAutomaticActivationOfEntity(typeof(SkillComponent))]
-    abstract class Soldier : GActor
+    [UActorClass("Soldier")]
+    [UComponentAutomaticActivationOfEntity(typeof(IdentityComponent))]
+    [UComponentAutomaticActivationOfEntity(typeof(AttributeComponent))]
+    [UComponentAutomaticActivationOfEntity(typeof(TransformComponent))]
+    [UComponentAutomaticActivationOfEntity(typeof(SkillComponent))]
+    abstract class Soldier : UActor
     {
         [GameEngine.OnReplicateId()]
         public int uid;

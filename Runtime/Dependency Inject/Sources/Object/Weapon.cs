@@ -26,8 +26,8 @@ namespace GameFramework.Sample.DependencyInject
     /// <summary>
     /// 武器对象基类
     /// </summary>
-    [GObjectClass("Weapon")]
-    internal class Weapon : GObject
+    [UObjectClass("Weapon")]
+    internal class Weapon : UObject
     {
     }
 }

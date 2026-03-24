@@ -26,8 +26,8 @@ namespace GameFramework.Sample.SymbolParser
     /// <summary>
     /// 战斗对象基类
     /// </summary>
-    [GActorClass("Soldier")]
-    [GComponentAutomaticActivationOfEntity(typeof(MoveComponent))]
+    [UActorClass("Soldier")]
+    [UComponentAutomaticActivationOfEntity(typeof(MoveComponent))]
     internal class Soldier : Actor, IState
     {
         public void OnState(float dt)

@@ -26,7 +26,7 @@ namespace GameFramework.Sample.ObjectLifecycle
     /// <summary>
     /// 玩家对象基类
     /// </summary>
-    [GActorClass("Player")]
+    [UActorClass("Player")]
     internal class Player : Actor
     {
         protected override void OnInitialize()

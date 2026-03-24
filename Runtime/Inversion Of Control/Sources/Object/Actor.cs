@@ -26,9 +26,9 @@ namespace GameFramework.Sample.InversionOfControl
     /// <summary>
     /// 角色对象基类
     /// </summary>
-    [GActorClass("Actor")]
-    [GComponentAutomaticActivationOfEntity(typeof(AttributeComponent))]
-    internal abstract class Actor : GActor
+    [UActorClass("Actor")]
+    [UComponentAutomaticActivationOfEntity(typeof(AttributeComponent))]
+    internal abstract class Actor : UActor
     {
         protected override void OnInitialize()
         {
