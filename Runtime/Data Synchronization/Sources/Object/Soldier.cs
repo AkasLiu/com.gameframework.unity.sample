@@ -35,7 +35,7 @@ namespace GameFramework.Sample.DataSynchronization
     [UComponentAutomaticActivationOfEntity(typeof(SkillComponent))]
     abstract class Soldier : UActor
     {
-        [GameEngine.OnReplicateId()]
+        [GameEngine.CReplicateId()]
         public int uid;
 
         public override string ToString()

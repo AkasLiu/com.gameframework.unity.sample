@@ -32,10 +32,10 @@ namespace GameFramework.Sample.DataSynchronization
     [UComponentClass("IdentityComponent")]
     internal class IdentityComponent : UComponent
     {
-        [GameEngine.OnReplicateField("object_type")]
+        [GameEngine.CReplicateField("object_type")]
         public int objectType;
 
-        [GameEngine.OnReplicateField("object_name")]
+        [GameEngine.CReplicateField("object_name")]
         public string objectName;
 
         public override string ToString()

@@ -32,19 +32,19 @@ namespace GameFramework.Sample.DataSynchronization
     [UComponentClass("AttributeComponent")]
     internal class AttributeComponent : UComponent
     {
-        [GameEngine.OnReplicateField()]
+        [GameEngine.CReplicateField()]
         public int level;
 
-        [GameEngine.OnReplicateField()]
+        [GameEngine.CReplicateField()]
         public int exp;
 
-        [GameEngine.OnReplicateField()]
+        [GameEngine.CReplicateField()]
         public int health;
 
-        [GameEngine.OnReplicateField()]
+        [GameEngine.CReplicateField()]
         public int energy;
 
-        [GameEngine.OnReplicateField()]
+        [GameEngine.CReplicateField()]
         public int attack;
 
         public override string ToString()
